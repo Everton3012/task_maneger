@@ -1,0 +1,28 @@
+.main{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  h1{z-index: 99;
+    font-size: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    color: #ccc;
+      text-shadow: 1px 1px black;
+      span{
+        color: rgb(60, 0, 255);
+      }
+  }
+}
+.containerHero{
+  opacity: 0.5;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  .hero{
+    position: relative;
+    width: 600px;
+    height: 600px;
+  }
+}
