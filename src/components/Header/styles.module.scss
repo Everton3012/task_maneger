@@ -1,0 +1,33 @@
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 2%;
+  border-bottom: 0.1px solid #ccc;
+
+  .logo{
+    a{
+      color: #ccc;
+      text-shadow: 1px 1px black;
+      span{
+        color: rgb(60, 0, 255);
+      }
+    }
+  }
+}
+
+.nav{
+  nav{
+    ul{
+      display: flex;
+      gap: 1.5em;
+      li{
+        transition: all 0.3s;
+      }
+      li:hover{
+        opacity: .5;
+      }
+    }
+  }
+}
