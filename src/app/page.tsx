@@ -6,7 +6,9 @@ import { Container } from "@/components/Container";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Container><Header /></Container>
+      <Container>
+        <Header />
+      </Container>
     </main>
   );
 }
