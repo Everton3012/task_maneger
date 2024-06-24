@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./page.module.scss";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
@@ -9,6 +8,6 @@ export default function Home() {
       <Container>
         <Header />
       </Container>
-    </main>
+    </main> //main
   );
 }

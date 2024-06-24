@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './styles.module.scss';
+import {BiLogInCircle} from "react-icons/bi"
 
 export const Header = () => {
   return (
@@ -11,9 +12,7 @@ export const Header = () => {
         <div className={styles.nav}>
           <nav>
             <ul>
-              <li><Link href={'/'}>HOME</Link></li>
-              <li><Link href={'/'}>SOBRE</Link></li>
-              <li><Link href={'/'}>LOGIN</Link></li>
+              <li><Link href={'/'}><BiLogInCircle size={30}/></Link></li>
             </ul>
           </nav>
         </div>
