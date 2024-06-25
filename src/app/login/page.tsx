@@ -5,6 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
+import { signIn } from "next-auth/react"
 
 const schemForma = z.object({
   email: z.string().email("informe um email valido"),
@@ -12,7 +13,7 @@ const schemForma = z.object({
 })
 
 type FormProps = z.infer<typeof schemForma>;
-const Login = () => {
+const Page = () => {
 
   const {
     handleSubmit,
@@ -29,8 +30,18 @@ const Login = () => {
     },
   });
 
-  const handleFormSubmit = (data: FormProps) => {
-    console.log(data);
+  const handleFormSubmit = (e: FormProps) => {
+
+    const data = {
+      email: e.email,
+      password: e.password
+    };
+
+    signIn("credentials", {
+      ...data,
+      callbackUrl: "/dashboard"
+    })
+
   };
 
   return (
@@ -42,7 +53,7 @@ const Login = () => {
           <section className={styles.form}>
 
             <form onSubmit={handleSubmit(handleFormSubmit)}>
-            <h2>T<span>K</span></h2>
+              <h2>T<span>K</span></h2>
               <input  {...register("email")} type="email" required />
               {errors.email?.message &&
                 <p>{errors.email?.message}</p>
@@ -54,7 +65,7 @@ const Login = () => {
               <div className={styles.cadastro}>
                 <Link href={'/cadastro'}>Clique aqui caso não tenha cadastro</Link>
               </div>
-              <input type="submit" value={'Enviar'} />
+              <input type="submit" value={'Logar'} />
             </form>
 
           </section>
@@ -65,4 +76,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Page;
